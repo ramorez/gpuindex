@@ -371,7 +371,15 @@ td[data-dir="down"] { color: var(--gpui-down); }
         <div class="clause__body">
           <p>GPUI is an equal-weight price index of published on-demand cloud GPU list rates, expressed against a base value of 100 fixed at inception.</p>
           <p>Each constituent is measured daily as the median of independent published sources; the index is the arithmetic mean of constituent price-relatives against their day-one base prices, with divisor-based reconstitution so basket changes never create an artificial level jump.</p>
-          <p class="soft">Only constituents observed from at least two independent published sources qualify. The series updates daily at 08:00 UAE.</p>
+          <p><strong>Series 2 launched on 1 October 2026.</strong> At the launch the constituent set was reconstituted to the wider card lineup below, under these updated measurement rules:</p>
+          <ul>
+            <li><strong>Evaluation:</strong> an eligible constituent (at least two independent sources on the launch day, or its last published price carried forward) is priced at the median of its daily published sources.</li>
+            <li><strong>Move band (upside only):</strong> a constituent's published price may not rise by more than 3.5× its last published level in a single day — prices above the band are set aside before the median is taken, and where no published price falls within the band the band itself is published. The band resets from each day's published price, and declines are always published in full.</li>
+            <li><strong>Carry-forward:</strong> if a constituent falls below the two-source minimum, its last qualifying price is carried forward until the next reconstitution rather than being dropped mid-series.</li>
+            <li><strong>Source scope:</strong> every enabled source counts — official first-party rates, marketplace prices, and non-USD list prices converted at a dated live FX rate.</li>
+            <li><strong>Chain anchor:</strong> Series 2 opens exactly at the Series 1 final close, so the published level is continuous across the launch.</li>
+          </ul>
+          <p class="soft">Series 1 (22 August 2026 – 30 September 2026) was measured on four workhorse datacenter GPUs from official first-party sources only. The series updates daily at 08:00 UAE.</p>
         </div>
       </div>
     </details>
@@ -386,9 +394,9 @@ td[data-dir="down"] { color: var(--gpui-down); }
       </summary>
       <div class="clause__panel grid">
         <div class="clause__body">
-          <p>The core basket is a fixed, equal-weight set of four datacenter workhorses — <strong>H100</strong>, <strong>H200</strong>, <strong>A100</strong>, <strong>B200</strong>.</p>
-          <p>Inference and edge cards — for example L40S, B300, RTX 4090, RTX 5090 — are tracked for reference outside the core basket, by design.</p>
-          <p class="soft">Constituent-level prices, source identities and collection metadata are not published. The composite series above is the only public data.</p>
+          <p>Since the Series 2 reconstitution on 1 October 2026 the core basket is an equal-weight set of eleven cards — datacentre workhorses, inference and edge: <strong>H100</strong>, <strong>H200</strong>, <strong>A100</strong>, <strong>B200</strong>, <strong>B300</strong>, <strong>L40S</strong>, <strong>RTX 4090</strong>, <strong>RTX 5090</strong>, <strong>A6000</strong>, <strong>RTX 6000</strong>, <strong>MI300X</strong>.</p>
+          <p>During Series 1 the core basket was the four workhorses — H100, H200, A100, B200 — with the remaining cards tracked for reference outside the basket.</p>
+          <p class="soft">Constituent eligibility is confirmed at each series launch against the two-source minimum; carried-forward prices are marked as carried in the methodology notes. Constituent-level prices, source identities and collection metadata are not published here. The composite series above is the only public data.</p>
         </div>
       </div>
     </details>
@@ -408,11 +416,11 @@ td[data-dir="down"] { color: var(--gpui-down); }
           <dl class="catalog">
             <div>
               <dt>Core basket</dt>
-              <dd>Daily price series for each core constituent — H100, H200, A100, B200 — from inception.</dd>
+              <dd>Daily price series for each core constituent — since 1 October 2026 (Series 2): H100, H200, A100, B200, B300, L40S, RTX 4090, RTX 5090, A6000, RTX 6000, MI300X. Series 1 core basket (H100, H200, A100, B200) from inception (22 August 2026).</dd>
             </div>
             <div>
               <dt>Reference cards</dt>
-              <dd>Daily price series for the tracked inference and edge cards — L40S, B300, RTX 4090, RTX 5090.</dd>
+              <dd>Daily per-GPU reference series for cards outside the published core basket, including the Series 1 reference set — L40S, B300, RTX 4090, RTX 5090 — and any cards tracked but not index-eligible on a given day.</dd>
             </div>
             <div>
               <dt>Composite history</dt>
